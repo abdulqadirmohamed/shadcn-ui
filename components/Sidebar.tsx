@@ -2,7 +2,7 @@ import React from 'react'
 import UserItem from './UserItem'
 
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from './ui/command'
-import { BarChart2, CookieIcon, Mail, MessageSquare, Rss, Settings, User } from 'lucide-react'
+import { BarChart2, CookieIcon, Gauge, Mail, MessageSquare, Rss, Settings, User } from 'lucide-react'
 import { Cookie } from 'next/font/google'
 import Link from 'next/link'
 
@@ -13,6 +13,11 @@ const Sidebar = () => {
             items: [
                 {
                     link: "/",
+                    title: "Dashboard",
+                    icon: <Gauge  size={20} />
+                },
+                {
+                    link: "/profile",
                     title: "Profile",
                     icon: <User size={20} />
                 },
@@ -67,7 +72,7 @@ const Sidebar = () => {
                             <CommandGroup key={key} heading={menu.group}>
                                 {menu.items.map((item: any, itemKey: number) => (
                                     <CommandItem key={itemKey}>
-                                        <Link href={item.link} className='flex gap-2 cursor-pointer'>
+                                        <Link href={item.link} className='flex gap-3 cursor-pointer'>
                                             <span > {item.icon}</span>
                                             {item.title}
                                         </Link>
