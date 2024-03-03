@@ -14,7 +14,7 @@ const Sidebar = () => {
                 {
                     link: "/",
                     title: "Dashboard",
-                    icon: <Gauge  size={20} />
+                    icon: <Gauge size={20} />
                 },
                 {
                     link: "/profile",
@@ -61,8 +61,8 @@ const Sidebar = () => {
         },
     ]
     return (
-        <div className='w-[300px] min-w-[300px] min-h-screen flex flex-col border-r p-4'>
-            <div>
+        <div className='md:min-w-[300px] min-h-screen flex flex-col border-r p-4'>
+            <div >
                 <UserItem />
             </div>
             <div className='grow h-full'>
@@ -72,9 +72,9 @@ const Sidebar = () => {
                             <CommandGroup key={key} heading={menu.group}>
                                 {menu.items.map((item: any, itemKey: number) => (
                                     <CommandItem key={itemKey}>
-                                        <Link href={item.link} className='flex gap-3 cursor-pointer'>
+                                        <Link href={item.link} className='flex justify-center gap-3 cursor-pointer'>
                                             <span > {item.icon}</span>
-                                            {item.title}
+                                            <span className='hidden md:flex'>{item.title}</span>
                                         </Link>
                                     </CommandItem>
                                 ))}
